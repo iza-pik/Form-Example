@@ -16,16 +16,16 @@ export const displayUserError = (error) => ({
   payload: { error },
 });
 
-export const submitUserDetails = (id, value) => ({
+export const submitUserDetails = (boolean) => ({
   type: SUBMIT_USER_DETAILS,
-  payload: { id, value },
+  payload: { boolean },
 });
 export const changePrivacyDetails = (id, boolean) => ({
   type: CHANGE_PRIVACY_DETAILS,
   payload: { id, boolean },
 });
 
-export const submitPrivacyDetails = (id, value) => ({
+export const submitPrivacyDetails = (boolean) => ({
   type: SUBMIT_PRIVACY_DETAILS,
-  payload: { id, value },
+  payload: { boolean },
 });

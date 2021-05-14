@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Message } from "./styles";
 
 const Done = ({ userCompleted, privacyCompleted }) => {
-  return (
+  return userCompleted && privacyCompleted ? (
     <Message>
       <h1>Done!</h1>
       <p>
@@ -11,6 +11,8 @@ const Done = ({ userCompleted, privacyCompleted }) => {
         us already!
       </p>
     </Message>
+  ) : (
+    "Please fill in the form."
   );
 };
 

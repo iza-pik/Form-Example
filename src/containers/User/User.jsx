@@ -2,7 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { changeUserDetails, displayUserError } from "../../store/actions";
+import {
+  changeUserDetails,
+  submitUserDetails,
+  displayUserError,
+} from "../../store/actions";
 import userInputs from "../../utils/userInputs";
 
 import Input from "../../components/Input/Input";
@@ -73,7 +77,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   onChangeUserDetails: (id, value) => dispatch(changeUserDetails(id, value)),
-  onSubmitUserDetails: (boolean) => dispatch(changeUserDetails(boolean)),
+  onSubmitUserDetails: (boolean) => dispatch(submitUserDetails(boolean)),
   onDisplayUserError: (error) => dispatch(displayUserError(error)),
 });
 
