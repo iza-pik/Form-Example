@@ -1,12 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Message } from "./styles";
 
 const Done = ({ userCompleted, privacyCompleted }) => {
   return (
-    <div>
-      Please verify your email address, you should have received an email from
-      us already!
-    </div>
+    <Message>
+      <h1>Done!</h1>
+      <p>
+        Please verify your email address, you should have received an email from
+        us already!
+      </p>
+    </Message>
   );
 };
 

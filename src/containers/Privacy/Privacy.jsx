@@ -11,6 +11,8 @@ import privacyInputs from "../../utils/privacyInputs";
 import Checkbox from "../../components/Checkbox";
 import Button from "../../components/Button/Button";
 
+import { Inputs } from "./styles";
+
 const Privacy = ({
   privacyDetails,
   onChangePrivacyDetails,
@@ -29,7 +31,7 @@ const Privacy = ({
   };
 
   return (
-    <div>
+    <Inputs>
       {privacyInputs.map((item) => (
         <Checkbox
           {...item}
@@ -41,7 +43,7 @@ const Privacy = ({
       <Button type="submit" onClick={submitPrivacyDetails}>
         Submit
       </Button>
-    </div>
+    </Inputs>
   );
 };
 

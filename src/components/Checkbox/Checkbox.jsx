@@ -1,17 +1,13 @@
 import React from "react";
-
-// const Checkbox = ({ type, name, title, checked, onChange }) => (
-//   <label>
-//     {title}
-//     <input type={type} name={name} checked={checked} onChange={onChange} />
-//   </label>
-// );
+import { CheckboxContainer } from "./styles.js";
 
 const Checkbox = ({ title, ...props }) => (
-  <label>
-    {title}
-    <input {...props} />
-  </label>
+  <CheckboxContainer>
+    <label>
+      {title}
+      <input {...props} />
+    </label>
+  </CheckboxContainer>
 );
 
 export default Checkbox;
