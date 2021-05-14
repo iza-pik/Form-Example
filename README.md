@@ -1,3 +1,17 @@
+### Project notes
+
+I have used "react-router-dom" for navigation (routing) between Done/Privacy/User components.
+
+I have created a store to manage the state and dispatched actions to submit the data and display error message (Redux).
+
+Styling was done using "styled-components" library.
+
+I wrote unit tests to check correct password validation and display of messages.
+
+Thank you!
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

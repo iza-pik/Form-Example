@@ -9,6 +9,7 @@ import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 
 import { UserForm } from "./styles";
+import validatePassword from "../../utils/validatePassword";
 
 const User = ({
   userDetails,
@@ -17,15 +18,6 @@ const User = ({
   onDisplayUserError,
 }) => {
   const history = useHistory();
-
-  const validatePassword = (password) => {
-    const containsNumber = password.match(/\d+/g);
-    const validLength = containsNumber && containsNumber.length > 1;
-    if (password.length > 9 && validLength) {
-      return true;
-    }
-    return false;
-  };
 
   const submitUserDetails = (event) => {
     console.log("SUBMIT", userDetails);
@@ -37,7 +29,11 @@ const User = ({
       onDisplayUserError("");
       history.push("/privacy");
     } else {
-      onDisplayUserError("Invalid password");
+      onDisplayUserError(
+        `Invalid password. Your password should be over 9 characters long and
+          contain at least one number and at least one uppercase and one
+          lowercase character.`
+      );
     }
   };
 
@@ -51,7 +47,9 @@ const User = ({
       <form onSubmit={(e) => submitUserDetails(e)}>
         {userInputs.map((item) => (
           <label htmlFor={item.id} key={item.title}>
-            {item.title === "Password" && <div>{userDetails.error}</div>}
+            {item.title === "Password" && userDetails.error && (
+              <p className="errorMsg">{userDetails.error} </p>
+            )}
             {item.title}
             {item.required ? "*" : ""}
             <Input

@@ -8,7 +8,7 @@ import Done from "./containers/Done";
 
 import { Container, NavBar, Body } from "./styles";
 
-const App = () => {
+export const App = () => {
   const handleClick = (event) => {
     console.log(event);
   };
